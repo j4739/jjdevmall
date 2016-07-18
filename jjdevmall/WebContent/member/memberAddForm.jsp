@@ -39,21 +39,27 @@ span {
 			if ($("#memberId").val() == "") {
 				$("#Idhelper").text("아이디를 입력하세요.");
 				$("#memberId").focus();
-			} else if ($("#memberPw").val() == "") {
+			} 
+			else if ($("#memberPw").val() == "") {
 				$("#Pwhelper").text("비밀번호를 입력하세요.");
 				$("#memberPw").focus();
-			} else if ($("#memberName").val() == "") {
+			} 
+			else if ($("#memberName").val() == "") {
 				$("#Namehelper").text("이름를 입력하세요.");
 				$("#memberName").focus();
-			} else if ($(".memberSex:checked").length == 0) {
+			} 
+			else if ($(".memberSex:checked").length == 0) {
 				$("#Sexhelper").text("성별를 체크하세요.");
-			} else if ($("#memberAge").val() == 0 || isNaN($("#memberAge").val())) {
+			} 
+			else if ($("#memberAge").val() == 0 || isNaN($("#memberAge").val())) {
 				$("#Agehelper").text("나이를 입력하세요.");
 				$("#memberAge").focus();
-			} else if ($("#address_addr").val() == "") {
+			} 
+			else if ($("#address_addr").val() == "") {
 				$("#Addrhelper").text("주소를 입력하세요.");
 				$("#address_addr").focus();
-			} else {
+			} 
+			else {
 				alert("회원가입이 완료되었습니다.");
 				$("#addform").submit();
 			}
@@ -71,27 +77,33 @@ span {
 				아이디:<input type="text" id="memberId" name="memberId"> 
 				<span id="Idhelper"></span>
 			</div>
+			
 			<div>
-				비밀번호:<input type="text" id="memberPw" name="memberPw"> 
+				비밀번호:<input type="password" id="memberPw" name="memberPw"> 
 				<span id="Pwhelper"></span>
 			</div>
+			
 			<div>
 				이름:<input type="text" id="memberName" name="memberName"> 
 				<span id="Namehelper"></span>
 			</div>
+			
 			<div>
 				성별:<input type="radio" class="memberSex" name="memberSex" value="남">남
 				<input type="radio" class="memberSex" name="memberSex" value="여">여
 				<span id="Sexhelper"></span>
 			</div>
+			
 			<div>
 				나이:<input type="text" id="memberAge" name="memberAge"> 
 				<span id="Agehelper"></span>
 			</div>
+			
 			<div>
 				주소:<input type="text" id="address_addr" name="address_addr">
 				<span id="Addrhelper"></span>
 			</div>
+			
 			<div>
 				<input type="button" id="addbtn" value="회원가입">
 			</div>

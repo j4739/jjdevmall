@@ -15,7 +15,7 @@
 		String memberPw = request.getParameter("memberPw");
 		String memberName = request.getParameter("memberName");
 		String memberSex = request.getParameter("memberSex");
-		String memberAge = request.getParameter("memberAge");
+		int memberAge = Integer.parseInt(request.getParameter("memberAge"));
 		String address_addr = request.getParameter("address_addr");
 
 		System.out.println(memberId + "<--memberId");
@@ -47,7 +47,7 @@
 			memstmt.setString(2, memberPw);
 			memstmt.setString(3, memberName);
 			memstmt.setString(4, memberSex);
-			memstmt.setString(5, memberAge);
+			memstmt.setInt(5, memberAge);
 			//쿼리 실행
 			memstmt.executeUpdate();
 			
@@ -79,6 +79,11 @@
 		} catch (SQLException ex) {
 			out.println(ex.getMessage());
 			ex.printStackTrace();
+		}finally{
+			rs.close();
+			memstmt.close();
+			addrstmt.close();
+			conn.close();
 		}
 	%>
 </body>
