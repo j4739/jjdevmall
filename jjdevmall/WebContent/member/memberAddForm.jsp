@@ -31,6 +31,9 @@ span {
 			if ($("#memberAge").val() != 0) {
 				$("#Agehelper").text("");
 			}
+			if ($("#address_addr").val() != "") {
+				$("#Addrhelper").text("");
+			}
 			
 			//회원가입폼 유효성 검사
 			if ($("#memberId").val() == "") {
@@ -47,6 +50,9 @@ span {
 			} else if ($("#memberAge").val() == 0 || isNaN($("#memberAge").val())) {
 				$("#Agehelper").text("나이를 입력하세요.");
 				$("#memberAge").focus();
+			} else if ($("#address_addr").val() == "") {
+				$("#Addrhelper").text("주소를 입력하세요.");
+				$("#address_addr").focus();
 			} else {
 				alert("회원가입이 완료되었습니다.");
 				$("#addform").submit();
@@ -62,16 +68,16 @@ span {
 				<h2>회원가입</h2>
 			</legend>
 			<div>
-				아이디:<input type="text" id="memberId" name="memberId"> <span
-					id="Idhelper"></span>
+				아이디:<input type="text" id="memberId" name="memberId"> 
+				<span id="Idhelper"></span>
 			</div>
 			<div>
-				비밀번호:<input type="text" id="memberPw" name="memberPw"> <span
-					id="Pwhelper"></span>
+				비밀번호:<input type="text" id="memberPw" name="memberPw"> 
+				<span id="Pwhelper"></span>
 			</div>
 			<div>
-				이름:<input type="text" id="memberName" name="memberName"> <span
-					id="Namehelper"></span>
+				이름:<input type="text" id="memberName" name="memberName"> 
+				<span id="Namehelper"></span>
 			</div>
 			<div>
 				성별:<input type="radio" class="memberSex" name="memberSex" value="남">남
@@ -79,8 +85,12 @@ span {
 				<span id="Sexhelper"></span>
 			</div>
 			<div>
-				나이:<input type="text" id="memberAge" name="memberAge"> <span
-					id="Agehelper"></span>
+				나이:<input type="text" id="memberAge" name="memberAge"> 
+				<span id="Agehelper"></span>
+			</div>
+			<div>
+				주소:<input type="text" id="address_addr" name="address_addr">
+				<span id="Addrhelper"></span>
 			</div>
 			<div>
 				<input type="button" id="addbtn" value="회원가입">
