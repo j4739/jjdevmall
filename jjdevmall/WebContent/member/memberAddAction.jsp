@@ -65,7 +65,7 @@
 			if(address_addr != null) {
 				//member테이블에 방금 INSERT한 데이터의 PRIMARY KEY 값인 member_no컬럼의 데이터를 가져와서
 				//address테이블의 member_no컬럼의 데이터로 넣는다.
-				String sql2 = "INSERT INTO address(member_no, address_addr) VALUES(?,?)";
+				String sql2 = "INSERT INTO address(member_no, member_address) VALUES(?,?)";
 				addrstmt = conn.prepareStatement(sql2);
 				addrstmt.setInt(1, lastKey);
 				addrstmt.setString(2, address_addr);
