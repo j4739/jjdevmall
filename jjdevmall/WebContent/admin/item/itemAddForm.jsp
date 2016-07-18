@@ -31,10 +31,10 @@ span {
 			if ($("#itemname").val() == "") {
 				$("#namehelper").text("상품 이름을 입력하세요.");
 				$("#itemname").focus();
-			} else if ($("#itemprice").val() == "") {
+			} else if ($("#itemprice").val() == "" || isNaN($("#itemprice").val())) {
 				$("#pricehelper").text("상품 가격을 입력하세요.");
 				$("#itemprice").focus();
-			} else if ($("#itemrate").val() == "") {
+			} else if ($("#itemrate").val() == "" || isNaN($("#itemprice").val()) < -1) {
 				$("#ratehelper").text("상품 할인율을 입력하세요.");
 				$("#itemrate").focus();
 			} else {
