@@ -8,7 +8,7 @@
  
 </head>
 <body>
-<table border=5 >
+<table border="5" >
 	<tr>
 	<td>상품번호</td><td>이름</td><td>가격</td><td>할인율</td><td>수정</td><td>삭제</td>
 	</tr>
@@ -42,7 +42,7 @@
 		<td><%=rs.getString("item_price") %></td>
 		<td><%=rs.getString("item_rate") %></td>
 		<td><a href="<%=request.getContextPath()%>/admin/item/itemUpdateForm.jsp?send_no=<%=rs.getString("item_no")%>">수정</a></td>
-		<td><a href="">삭제</a></td>
+		<td><a href="<%= request.getContextPath() %>/admin/item/itemDelete.jsp?send_no=<%= rs.getString("item_no")%>">삭제</a></td>
 		</tr>
 		 
 <%

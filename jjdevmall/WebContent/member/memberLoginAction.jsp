@@ -24,7 +24,7 @@
 	try{
 		conection = DriverManager.getConnection(url, user, userPw);
 		
-		String sql = "select member_id,member_pw,member_name,member_sex,member_age,member_address from member m inner join address a on m.member_no = a.member_no where member_id=?";
+		String sql = "select * from member m inner join address a on m.member_no = a.member_no where member_id=?";
 		
 		statement = conection.prepareStatement(sql);
 		statement.setString(1, memberId);
@@ -37,6 +37,7 @@
 				// 세션에 아이디값 저장
 				System.out.println("회원 로그인 성공");
 				session.setAttribute("sessionMemberId", resultSet.getString("member_id"));
+				session.setAttribute("sessionMemberNo", resultSet.getString("member_no"));
 			}
 			else{
 				System.out.println("회원 비밀번호 일치 실패");

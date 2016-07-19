@@ -24,8 +24,10 @@
 <body>
 <%
 	String sessionMemberId = (String)session.getAttribute("sessionMemberId");
+	String sessionMemberNo = (String)session.getAttribute("sessionMemberNo");
 	
 	System.out.println(sessionMemberId+"<--sessionMemberId");
+	System.out.println(sessionMemberNo+"<--sessionMemberNo");
 	
 	if(sessionMemberId == null) { // 로그인이 안된 상태
 %>
@@ -46,6 +48,7 @@
 	else { // 로그인이 된 상태
 %>
 	<ol>
+		<li><a href="<%=request.getContextPath()%>/item/itemList.jsp">상품목록</a></li>
 		<li><a href="<%=request.getContextPath()%>/member/memberOne.jsp">회원정보</a></li>
 		<li><a href="<%=request.getContextPath()%>/member/memberLogoutAction.jsp">로그아웃</a></li>
 	</ol>
