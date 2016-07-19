@@ -10,7 +10,7 @@
 <body>
 <table border=5 >
 	<tr>
-	<td>이름</td><td>가격</td><td>할인율</td>
+	<td>상품번호</td><td>이름</td><td>가격</td><td>할인율</td><td>수정</td><td>삭제</td>
 	</tr>
 <%
 	request.setCharacterEncoding("utf-8");
@@ -30,16 +30,19 @@
 		conn.setAutoCommit(false);
 	
 		//쿼리문장실행 준비
-		String sql = "select item_name,item_price,item_rate from item";
+		String sql = "select * from item";
 		stmt = conn.prepareStatement(sql);
 		//쿼리 실행
 		rs = stmt.executeQuery();
 		while(rs.next()){
 %>
 		<tr>
+		<td><%=rs.getString("item_no") %></td>
 		<td><%=rs.getString("item_name") %></td>
 		<td><%=rs.getString("item_price") %></td>
 		<td><%=rs.getString("item_rate") %></td>
+		<td><a href="<%=request.getContextPath()%>/admin/item/itemUpdateForm.jsp?send_no=<%=rs.getString("item_no")%>">수정</a></td>
+		<td><a href="">삭제</a></td>
 		</tr>
 		 
 <%
